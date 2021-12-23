@@ -6,12 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Home from "./views/Home";
 import Error from "./views/Error";
+import Profile from "./views/Profile";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/:id" element={<Profile />} />
         <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>

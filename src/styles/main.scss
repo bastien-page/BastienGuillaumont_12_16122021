@@ -2,11 +2,9 @@
 @import "./utils/base";
 @import "./utils/typo";
 
+@import "./components/Navbar";
+@import "./components/VerticalNavbar";
+
 @import "./views/Home";
 @import "./views/Error";
-
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import "./views/Profile";
