@@ -1,15 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./styles/main.scss";
-import Home from "./views/Home";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./views/Home";
+import Error from "./views/Error";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,
