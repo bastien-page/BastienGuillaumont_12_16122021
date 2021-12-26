@@ -1,10 +1,10 @@
 import React from "react";
 import Hello from "./dashboard/Hello";
 
-function Dashboard() {
+function Dashboard({ userName }) {
   return (
-    <section>
-      <Hello />
+    <section className="dashboard">
+      <Hello name={userName} />
     </section>
   );
 }

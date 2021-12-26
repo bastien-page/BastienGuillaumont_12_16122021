@@ -9,7 +9,7 @@ function Profile() {
       <Navbar />
       <section className="profile__main">
         <VerticalNavbar />
-        <Dashboard />
+        <Dashboard userName="Test" />
       </section>
     </div>
   );
