@@ -1,4 +1,5 @@
 import React from "react";
+import Dashboard from "../components/Dashboard";
 import Navbar from "../components/Navbar";
 import VerticalNavbar from "../components/VerticalNavbar";
 
@@ -8,6 +9,7 @@ function Profile() {
       <Navbar />
       <section className="profile__main">
         <VerticalNavbar />
+        <Dashboard />
       </section>
     </div>
   );

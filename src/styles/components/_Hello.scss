@@ -1,0 +1,16 @@
+.hello {
+  margin: 0 3rem;
+  &__title {
+    margin-top: 3rem;
+    font-size: 3.5rem;
+    span {
+      font-size: 3.5rem;
+      color: $colorprimary;
+    }
+  }
+  &__message {
+    margin-top: 2rem;
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
+}
