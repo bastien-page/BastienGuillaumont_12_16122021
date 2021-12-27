@@ -2,6 +2,7 @@ import React from "react";
 import { GetUserData } from "../services/getData";
 import DailyActivity from "./dashboard/DailyActivity";
 import Hello from "./dashboard/Hello";
+import Radar from "./dashboard/Radar";
 import Session from "./dashboard/Session";
 
 function Dashboard({ userId }) {
@@ -13,6 +14,7 @@ function Dashboard({ userId }) {
           <DailyActivity />
           <div className="dashboard__charts-bottom">
             <Session />
+            <Radar />
           </div>
         </div>
       </section>

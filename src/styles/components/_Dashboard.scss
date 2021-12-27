@@ -3,5 +3,8 @@
   &__charts {
     margin-top: 3rem;
     display: flex;
+    &-bottom {
+      display: flex;
+    }
   }
 }
