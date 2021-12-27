@@ -1,10 +1,10 @@
 import React from "react";
 
-function Hello({ name }) {
+function Hello({ data }) {
   return (
     <section className="hello">
       <h2 className="hello__title">
-        Bonjour <span> {name}</span>
+        Bonjour <span> {data}</span>
       </h2>
       <p className="hello__message">
         Félicitations ! Vous avez explosé vos objectifs hier 👏

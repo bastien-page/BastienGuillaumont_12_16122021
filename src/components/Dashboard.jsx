@@ -1,10 +1,15 @@
 import React from "react";
+import { GetUserData } from "../services/getData";
+import DailyActivity from "./dashboard/DailyActivity";
 import Hello from "./dashboard/Hello";
 
-function Dashboard({ userName }) {
+function Dashboard({ userId }) {
   return (
     <section className="dashboard">
-      <Hello name={userName} />
+      <Hello data="Test" />
+      <section className="dashboard__charts">
+        <DailyActivity />
+      </section>
     </section>
   );
 }
