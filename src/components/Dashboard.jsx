@@ -3,6 +3,7 @@ import { GetUserData } from "../services/getData";
 import DailyActivity from "./dashboard/DailyActivity";
 import Hello from "./dashboard/Hello";
 import Radar from "./dashboard/Radar";
+import Score from "./dashboard/Score";
 import Session from "./dashboard/Session";
 
 function Dashboard({ userId }) {
@@ -15,6 +16,7 @@ function Dashboard({ userId }) {
           <div className="dashboard__charts-bottom">
             <Session />
             <Radar />
+            <Score />
           </div>
         </div>
       </section>
