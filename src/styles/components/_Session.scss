@@ -1,0 +1,29 @@
+.session {
+  position: relative;
+  margin-top: 2rem;
+  width: 260px;
+  height: 260px;
+  border-radius: 5px;
+
+  &__title {
+    position: absolute;
+    color: white;
+    opacity: 0.5;
+    top: 2rem;
+    left: 2.5rem;
+    z-index: 2;
+  }
+  &__graph {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &__tooltip {
+    background-color: white;
+    padding: 1rem 0.5rem;
+    border-radius: 5px;
+    &-item {
+      font-size: 0.8rem;
+    }
+  }
+}
