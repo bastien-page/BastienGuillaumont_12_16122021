@@ -25,6 +25,16 @@ function Session() {
         Durée moyenne <br />
         des sessions
       </p>
+      <div className="session__axis">
+        <p>L</p>
+        <p>M</p>
+        <p>M</p>
+        <p>J</p>
+        <p>V</p>
+        <p>S</p>
+        <p>D</p>
+      </div>
+
       <AreaChart
         width={260}
         height={260}
@@ -34,7 +44,7 @@ function Session() {
           background: "#FF0000",
           borderRadius: "5px",
         }}
-        margin={{ top: 50, left: 0, right: 0, bottom: 10 }}
+        margin={{ top: 80, left: 0, right: 0, bottom: 60 }}
       >
         <defs>
           <linearGradient id="colorGraph" x1="0" y1="0" x2="1" y2="0">
@@ -44,10 +54,11 @@ function Session() {
         </defs>
         <XAxis
           dataKey="day"
-          axisLine={false}
-          tickLine={false}
-          tick={{ fill: "white", opacity: "0.5" }}
-          padding={{ left: 20, right: 20 }}
+          hide={true}
+          // axisLine={false}
+          // tickLine={false}
+          // tick={{ fill: "white", opacity: "0.5" }}
+          // padding={{ left: 20, right: 20 }}
         />
         <YAxis hide={true} />
         <Tooltip content={<CustomTooltip />} />
@@ -64,9 +75,13 @@ function Session() {
       {/* <LineChart
         width={260}
         height={260}
-        data={data}
+        data={session}
         margin={{ top: 50, right: 0, left: 0, bottom: 5 }}
         padding={{ top: 5, right: 5, left: 5, bottom: 5 }}
+        style={{
+          background: "#FF0000",
+          borderRadius: "5px",
+        }}
       >
         <defs>
           <linearGradient id="colorGraph" x1="0" y1="0" x2="1" y2="0">
@@ -75,7 +90,7 @@ function Session() {
           </linearGradient>
         </defs>
         <XAxis
-          dataKey="name"
+          dataKey="day"
           axisLine={false}
           tickLine={false}
           tick={{ fill: "white", opacity: "0.5" }}
@@ -85,7 +100,7 @@ function Session() {
         <Tooltip content={<CustomTooltip />} />
         <Line
           type="monotone"
-          dataKey="uv"
+          dataKey="sessionLength"
           padding={{ left: -10, right: -10 }}
           stroke="url(#colorGraph)"
           fillOpacity={0.9}

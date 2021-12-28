@@ -16,7 +16,7 @@ function Dashboard() {
           <DailyActivity />
           <div className="dashboard__charts-bottom">
             <Session />
-            {/* <Radar /> */}
+            <Radar />
             <Score />
           </div>
         </div>

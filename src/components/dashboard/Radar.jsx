@@ -57,6 +57,7 @@ function Radar() {
         background: "#282D30",
         borderRadius: "5px",
         margin: "2rem",
+        marginBottom: "0",
         boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.0212249)",
       }}
     >
