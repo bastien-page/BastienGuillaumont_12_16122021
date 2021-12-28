@@ -1,10 +1,15 @@
 import React from "react";
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
+import { GetScore } from "../../services/getData";
+import { useParams } from "react-router-dom";
 
 function Score() {
-  //const userScore = score.score ? score.score * 100 : score.todayScore * 100;
+  const { id } = useParams();
+  const userId = id;
 
-  let userScore = 12;
+  const score = GetScore(userId);
+
+  const userScore = score.score ? score.score * 100 : score.todayScore * 100;
 
   const data = [
     {

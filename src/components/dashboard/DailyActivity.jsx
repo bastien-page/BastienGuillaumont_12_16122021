@@ -8,46 +8,15 @@ import {
   Legend,
   Bar,
 } from "recharts";
+import { useParams } from "react-router-dom";
+import { GetActivityData } from "../../services/getData";
 import PropTypes from "prop-types";
 
 function DailyActivity() {
-  const data = [
-    {
-      day: "2020-07-01",
-      kilogram: 80,
-      calories: 240,
-    },
-    {
-      day: "2020-07-02",
-      kilogram: 80,
-      calories: 220,
-    },
-    {
-      day: "2020-07-03",
-      kilogram: 81,
-      calories: 280,
-    },
-    {
-      day: "2020-07-04",
-      kilogram: 81,
-      calories: 290,
-    },
-    {
-      day: "2020-07-05",
-      kilogram: 80,
-      calories: 160,
-    },
-    {
-      day: "2020-07-06",
-      kilogram: 78,
-      calories: 162,
-    },
-    {
-      day: "2020-07-07",
-      kilogram: 76,
-      calories: 390,
-    },
-  ];
+  const { id } = useParams();
+  const userId = id;
+
+  const activity = GetActivityData(userId);
 
   return (
     <div className="dailyactivity">
@@ -55,7 +24,7 @@ function DailyActivity() {
       <BarChart
         width={800}
         height={300}
-        data={data}
+        data={activity}
         margin={{
           top: 10,
           right: 10,

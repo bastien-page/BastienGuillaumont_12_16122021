@@ -10,40 +10,14 @@ import {
   Legend,
   Line,
 } from "recharts";
+import { useParams } from "react-router-dom";
+import { GetSessionData } from "../../services/getData";
 
 function Session() {
-  const data = [
-    {
-      name: "L",
-      uv: 4000,
-    },
-    {
-      name: "M",
-      uv: 3000,
-    },
-    {
-      name: "M",
-      uv: 2000,
-    },
-    {
-      name: "J",
-      uv: 2780,
-    },
-    {
-      name: "V",
-      uv: 1890,
-      pv: 4800,
-      amt: 2181,
-    },
-    {
-      name: "S",
-      uv: 2390,
-    },
-    {
-      name: "D",
-      uv: 3490,
-    },
-  ];
+  const { id } = useParams();
+  const userId = id;
+
+  const session = GetSessionData(userId);
 
   return (
     <div className="session">
@@ -54,7 +28,7 @@ function Session() {
       <AreaChart
         width={260}
         height={260}
-        data={data}
+        data={session}
         className="session__graph"
         style={{
           background: "#FF0000",
@@ -69,7 +43,7 @@ function Session() {
           </linearGradient>
         </defs>
         <XAxis
-          dataKey="name"
+          dataKey="day"
           axisLine={false}
           tickLine={false}
           tick={{ fill: "white", opacity: "0.5" }}
@@ -80,7 +54,7 @@ function Session() {
 
         <Area
           type="monotone"
-          dataKey="uv"
+          dataKey="sessionLength"
           stroke="url(#colorGraph)"
           fillOpacity={0.9}
           fill="#ff0101"

@@ -1,42 +1,69 @@
 import { useState, useEffect } from "react";
 
-export function GetUserData(id) {
+export function GetName(id) {
+  const [name, setName] = useState("");
   let idUser = id;
-  const [userData, setUserData] = useState(null);
 
   useEffect(() => {
     fetch(`http://localhost:4000/user/${idUser}`)
-      .then((resp) => resp.json())
-      .then((result) => setUserData(result));
+      .then((res) => res.json())
+      .then((result) => setName(result.data.userInfos.firstName));
   }, [idUser]);
 
-  return userData;
+  return name;
+}
+
+export function GetKeyData(id) {
+  const [keyData, setKeyData] = useState("");
+  let idUser = id;
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/user/${idUser}`)
+      .then((res) => res.json())
+      .then((result) => setKeyData(result.data.keyData));
+  }, [idUser]);
+
+  return keyData;
 }
 
 export function GetActivityData(id) {
-  const [data, setData] = useState("");
+  const [activity, setActivity] = useState("");
 
   let idUser = id;
 
   useEffect(() => {
     fetch(`http://localhost:4000/user/${idUser}/activity`)
       .then((res) => res.json())
-      .then((result) => setData(result));
+      .then((result) => setActivity(result.data.sessions));
   }, [idUser]);
 
-  return data;
+  return activity;
 }
 
 export function GetSessionData(id) {
-  const [data, setData] = useState("");
+  const [session, setSession] = useState("");
 
   let idUser = id;
 
   useEffect(() => {
     fetch(`http://localhost:4000/user/${idUser}/average-sessions`)
       .then((res) => res.json())
-      .then((result) => setData(result));
+      .then((result) => setSession(result.data.sessions));
   }, [idUser]);
 
-  return data;
+  return session;
+}
+
+export function GetScore(id) {
+  const [score, setScore] = useState("");
+
+  let idUser = id;
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/user/${idUser}`)
+      .then((res) => res.json())
+      .then((result) => setScore(result.data));
+  }, [idUser]);
+
+  return score;
 }
