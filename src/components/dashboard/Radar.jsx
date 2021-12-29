@@ -10,6 +10,12 @@ import PropTypes from "prop-types";
 import { GetPerformance } from "../../services/getData";
 import { useParams } from "react-router-dom";
 
+/**
+ * Create Radar component
+ * @param {string} User Id
+ * @returns {React Component}
+ */
+
 function RadarUser() {
   const { id } = useParams();
   const userId = id;
@@ -25,7 +31,7 @@ function RadarUser() {
     "Cardio",
   ];
 
-  // Customize tick
+  // Customize tick with Label
   function customTick(tick) {
     return label[tick - 1];
   }

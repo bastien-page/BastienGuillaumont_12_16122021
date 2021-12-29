@@ -2,6 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import { GetName } from "../../services/getData";
 
+/**
+ * Create Hello component
+ * @param {string} User Id
+ * @returns {React Component}
+ */
+
 function Hello({ userId }) {
   return (
     <section className="hello">

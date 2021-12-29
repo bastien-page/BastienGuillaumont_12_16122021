@@ -6,6 +6,12 @@ import lipides from "../../assets/iconLipides.png";
 import PropTypes from "prop-types";
 import { GetKeyData } from "../../services/getData";
 
+/**
+ * Create Key data component
+ * @param {string} User Id
+ * @returns {React Component}
+ */
+
 function KeyData({ userId }) {
   const data = GetKeyData(userId);
 

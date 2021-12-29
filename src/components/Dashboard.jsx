@@ -9,6 +9,11 @@ import Session from "./dashboard/Session";
 
 import { useParams } from "react-router-dom";
 
+/**
+ * Create Dashboardcomponent
+ * @returns {React Component}
+ */
+
 function Dashboard() {
   const { id } = useParams();
   const userId = id;

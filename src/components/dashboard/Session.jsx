@@ -3,6 +3,12 @@ import { AreaChart, XAxis, YAxis, Tooltip, Area } from "recharts";
 import PropTypes from "prop-types";
 import { GetSessionData } from "../../services/getData";
 
+/**
+ * Create AreaChart component
+ * @param {string} User Id
+ * @returns {React Component}
+ */
+
 function Session({ userId }) {
   const session = GetSessionData(userId);
 

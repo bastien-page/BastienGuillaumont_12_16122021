@@ -42,7 +42,7 @@ function Score({ userId }) {
           angleAxisId={0}
           tick={false}
         />
-        <RadialBar dataKey="score" />
+        <RadialBar dataKey="score" style={{ borderRadius: "50%" }} />
       </RadialBarChart>
     </div>
   );

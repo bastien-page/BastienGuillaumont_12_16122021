@@ -11,11 +11,16 @@ import {
 import PropTypes from "prop-types";
 import { GetActivityData } from "../../services/getData";
 
+/**
+ * Create BarChart component
+ * @param {string} User Id
+ * @returns {React Component }
+ */
 function DailyActivity({ userId }) {
   const activity = GetActivityData(userId);
 
   /**
-   * Customized Tooltip to show Kilogram and calories
+   * Customized Tooltip
    */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -70,6 +75,7 @@ function DailyActivity({ userId }) {
           orientation="right"
           dataKey="kilogram"
           tickCount="3"
+          domain={["dataMin-2"]}
         />
 
         <Legend
