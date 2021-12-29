@@ -40,7 +40,7 @@ function DailyActivity() {
           tick={{ fill: "#9B9EAC" }}
           tickMargin={10}
           axisLine={{ stroke: "#9B9EAC" }}
-          padding={{ left: -52, right: -52 }}
+          padding={{ left: -48, right: -48 }}
         />
         <YAxis
           yAxisId="calories"
@@ -71,10 +71,12 @@ function DailyActivity() {
         <Tooltip
           position={{ y: 35 }}
           content={<CustomTooltip />}
-          cursor={{
-            fill: "#C4C4C4",
-            fillOpacity: ".5",
-          }}
+          // cursor={{
+          //   fill: "#C4C4C4",
+          //   fillOpacity: "0.4",
+          //   strokeWidth: 10,
+          // }}
+          cursor={{ strokeWidth: 3 }}
         />
         <Bar
           yAxisId="kilogram"

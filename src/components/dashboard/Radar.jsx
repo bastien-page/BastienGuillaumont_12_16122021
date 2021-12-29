@@ -4,47 +4,25 @@ import {
   PolarGrid,
   PolarAngleAxis,
   PolarRadiusAxis,
+  Radar,
 } from "recharts";
 
-function Radar() {
-  const data = [
-    {
-      userId: 18,
-      kind: {
-        1: "cardio",
-        2: "energy",
-        3: "endurance",
-        4: "strength",
-        5: "speed",
-        6: "intensity",
-      },
-      data: [
-        {
-          value: 200,
-          kind: 1,
-        },
-        {
-          value: 240,
-          kind: 2,
-        },
-        {
-          value: 80,
-          kind: 3,
-        },
-        {
-          value: 80,
-          kind: 4,
-        },
-        {
-          value: 220,
-          kind: 5,
-        },
-        {
-          value: 110,
-          kind: 6,
-        },
-      ],
-    },
+import { GetPerformance } from "../../services/getData";
+import { useParams } from "react-router-dom";
+
+function RadarUser() {
+  const { id } = useParams();
+  const userId = id;
+
+  const data = GetPerformance(userId);
+
+  const label = [
+    "Intensité",
+    "Vitesse",
+    "Force",
+    "Endurance",
+    "Energie",
+    "Cardio",
   ];
 
   return (
@@ -52,7 +30,7 @@ function Radar() {
       outerRadius={90}
       width={260}
       height={260}
-      data={data[0].data}
+      data={data}
       style={{
         background: "#282D30",
         borderRadius: "5px",
@@ -62,7 +40,14 @@ function Radar() {
       }}
     >
       <PolarGrid radialLines={false} />
-      <PolarAngleAxis dataKey="kind" stroke="white" tickLine={false} />
+      <PolarAngleAxis
+        dataKey="kind"
+        stroke="white"
+        tickLine={false}
+        tickFormatter={(tick) => label[tick - 1]}
+        style={{ fontSize: "12px" }}
+        dy={4}
+      />
       <PolarRadiusAxis angle={"none"} dataKey="value" />
       <Radar
         dataKey="value"
@@ -74,4 +59,4 @@ function Radar() {
   );
 }
 
-export default Radar;
+export default RadarUser;

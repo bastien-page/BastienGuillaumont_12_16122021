@@ -67,3 +67,17 @@ export function GetScore(id) {
 
   return score;
 }
+
+export function GetPerformance(id) {
+  const [performance, setPerformance] = useState("");
+
+  let idUser = id;
+
+  useEffect(() => {
+    fetch(`http://localhost:4000/user/${idUser}/performance`)
+      .then((res) => res.json())
+      .then((result) => setPerformance(result.data.data));
+  }, [idUser]);
+
+  return performance;
+}

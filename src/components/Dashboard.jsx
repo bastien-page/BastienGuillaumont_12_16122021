@@ -3,7 +3,7 @@ import React from "react";
 import DailyActivity from "./dashboard/DailyActivity";
 import Hello from "./dashboard/Hello";
 import KeyData from "./dashboard/KeyData";
-import Radar from "./dashboard/Radar";
+import RadarUser from "./dashboard/Radar";
 import Score from "./dashboard/Score";
 import Session from "./dashboard/Session";
 
@@ -16,7 +16,7 @@ function Dashboard() {
           <DailyActivity />
           <div className="dashboard__charts-bottom">
             <Session />
-            <Radar />
+            <RadarUser />
             <Score />
           </div>
         </div>
