@@ -8,15 +8,27 @@ import {
   Legend,
   Bar,
 } from "recharts";
-import { useParams } from "react-router-dom";
-import { GetActivityData } from "../../services/getData";
 import PropTypes from "prop-types";
+import { GetActivityData } from "../../services/getData";
 
-function DailyActivity() {
-  const { id } = useParams();
-  const userId = id;
-
+function DailyActivity({ userId }) {
   const activity = GetActivityData(userId);
+
+  /**
+   * Customized Tooltip to show Kilogram and calories
+   */
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="dailyactivity__tooltip">
+          <p className="dailyactivity__tooltip-item">{payload[0].value}kg</p>
+          <p className="dailyactivity__tooltip-item">{payload[1].value}kCal</p>
+        </div>
+      );
+    }
+
+    return null;
+  };
 
   return (
     <div className="dailyactivity">
@@ -71,12 +83,11 @@ function DailyActivity() {
         <Tooltip
           position={{ y: 35 }}
           content={<CustomTooltip />}
-          // cursor={{
-          //   fill: "#C4C4C4",
-          //   fillOpacity: "0.4",
-          //   strokeWidth: 10,
-          // }}
-          cursor={{ strokeWidth: 3 }}
+          cursor={{
+            fill: "#C4C4C4",
+            fillOpacity: "0.4",
+            strokeWidth: 10,
+          }}
         />
         <Bar
           yAxisId="kilogram"
@@ -102,20 +113,8 @@ function DailyActivity() {
   );
 }
 
-export default DailyActivity;
-
-/**
- * Customized Tooltip
- */
-const CustomTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="dailyactivity__tooltip">
-        <p className="dailyactivity__tooltip-item">{payload[0].value}kg</p>
-        <p className="dailyactivity__tooltip-item">{payload[1].value}kCal</p>
-      </div>
-    );
-  }
-
-  return null;
+DailyActivity.propTypes = {
+  userId: PropTypes.string,
 };
+
+export default DailyActivity;

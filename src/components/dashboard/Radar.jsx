@@ -6,7 +6,7 @@ import {
   PolarRadiusAxis,
   Radar,
 } from "recharts";
-
+import PropTypes from "prop-types";
 import { GetPerformance } from "../../services/getData";
 import { useParams } from "react-router-dom";
 
@@ -24,6 +24,11 @@ function RadarUser() {
     "Energie",
     "Cardio",
   ];
+
+  // Customize tick
+  function customTick(tick) {
+    return label[tick - 1];
+  }
 
   return (
     <RadarChart
@@ -44,7 +49,7 @@ function RadarUser() {
         dataKey="kind"
         stroke="white"
         tickLine={false}
-        tickFormatter={(tick) => label[tick - 1]}
+        tickFormatter={customTick}
         style={{ fontSize: "12px" }}
         dy={4}
       />
@@ -58,5 +63,9 @@ function RadarUser() {
     </RadarChart>
   );
 }
+
+Radar.propTypes = {
+  userId: PropTypes.string,
+};
 
 export default RadarUser;

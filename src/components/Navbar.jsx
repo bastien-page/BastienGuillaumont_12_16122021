@@ -1,10 +1,13 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <div className="navbar">
-      <img src={logo} alt="SportSee" />
+      <Link to="/">
+        <img src={logo} alt="SportSee" />
+      </Link>
       <nav>
         <ul>
           <li>Accueil</li>

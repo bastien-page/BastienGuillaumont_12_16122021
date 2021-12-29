@@ -1,11 +1,8 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { GetName } from "../../services/getData";
 
-function Hello() {
-  const { id } = useParams();
-  const userId = id;
-
+function Hello({ userId }) {
   return (
     <section className="hello">
       <h2 className="hello__title">
@@ -17,5 +14,9 @@ function Hello() {
     </section>
   );
 }
+
+Hello.propTypes = {
+  userId: PropTypes.string,
+};
 
 export default Hello;

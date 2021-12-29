@@ -1,12 +1,9 @@
 import React from "react";
 import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 import { GetScore } from "../../services/getData";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Score() {
-  const { id } = useParams();
-  const userId = id;
-
+function Score({ userId }) {
   const score = GetScore(userId);
 
   const userScore = score.score ? score.score * 100 : score.todayScore * 100;
@@ -50,5 +47,7 @@ function Score() {
     </div>
   );
 }
-
+Score.propTypes = {
+  userId: PropTypes.string,
+};
 export default Score;

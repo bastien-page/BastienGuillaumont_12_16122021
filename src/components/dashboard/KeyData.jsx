@@ -3,14 +3,10 @@ import calories from "../../assets/iconCalories.png";
 import proteines from "../../assets/iconProteins.png";
 import glucides from "../../assets/iconGlucides.png";
 import lipides from "../../assets/iconLipides.png";
-
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { GetKeyData } from "../../services/getData";
 
-function KeyData() {
-  const { id } = useParams();
-  const userId = id;
-
+function KeyData({ userId }) {
   const data = GetKeyData(userId);
 
   return (
@@ -57,5 +53,9 @@ function KeyData() {
     </div>
   );
 }
+
+KeyData.propTypes = {
+  userId: PropTypes.string,
+};
 
 export default KeyData;

@@ -1,12 +1,9 @@
 import React from "react";
 import { AreaChart, XAxis, YAxis, Tooltip, Area } from "recharts";
-import { useParams } from "react-router-dom";
+import PropTypes from "prop-types";
 import { GetSessionData } from "../../services/getData";
 
-function Session() {
-  const { id } = useParams();
-  const userId = id;
-
+function Session({ userId }) {
   const session = GetSessionData(userId);
 
   /**
@@ -79,5 +76,9 @@ function Session() {
     </div>
   );
 }
+
+Session.propTypes = {
+  userId: PropTypes.string,
+};
 
 export default Session;
