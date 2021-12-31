@@ -7,8 +7,6 @@ import {
   Radar,
 } from "recharts";
 import PropTypes from "prop-types";
-import { GetPerformance } from "../../services/getData";
-import { useParams } from "react-router-dom";
 
 /**
  * Create Radar component
@@ -16,12 +14,7 @@ import { useParams } from "react-router-dom";
  * @returns {React Component}
  */
 
-function RadarUser() {
-  const { id } = useParams();
-  const userId = id;
-
-  const data = GetPerformance(userId);
-
+function RadarUser({ performance }) {
   const label = [
     "Intensité",
     "Vitesse",
@@ -41,7 +34,7 @@ function RadarUser() {
       outerRadius={90}
       width={260}
       height={260}
-      data={data}
+      data={performance}
       style={{
         background: "#282D30",
         borderRadius: "5px",
@@ -70,8 +63,8 @@ function RadarUser() {
   );
 }
 
-Radar.propTypes = {
-  userId: PropTypes.string,
+RadarUser.propTypes = {
+  performance: PropTypes.array,
 };
 
 export default RadarUser;

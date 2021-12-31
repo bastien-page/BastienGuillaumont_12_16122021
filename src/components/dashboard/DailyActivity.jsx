@@ -9,16 +9,13 @@ import {
   Bar,
 } from "recharts";
 import PropTypes from "prop-types";
-import { GetActivityData } from "../../services/getData";
 
 /**
  * Create BarChart component
  * @param {string} User Id
  * @returns {React Component }
  */
-function DailyActivity({ userId }) {
-  const activity = GetActivityData(userId);
-
+function DailyActivity({ activity }) {
   /**
    * Customized Tooltip
    */
@@ -120,7 +117,7 @@ function DailyActivity({ userId }) {
 }
 
 DailyActivity.propTypes = {
-  userId: PropTypes.string,
+  activity: PropTypes.array,
 };
 
 export default DailyActivity;

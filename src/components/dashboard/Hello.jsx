@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GetName } from "../../services/getData";
 
 /**
  * Create Hello component
@@ -8,11 +7,11 @@ import { GetName } from "../../services/getData";
  * @returns {React Component}
  */
 
-function Hello({ userId }) {
+function Hello({ name }) {
   return (
     <section className="hello">
       <h2 className="hello__title">
-        Bonjour <span>{GetName(userId)}</span>
+        Bonjour <span>{name}</span>
       </h2>
       <p className="hello__message">
         Félicitations ! Vous avez explosé vos objectifs hier 👏
@@ -22,7 +21,7 @@ function Hello({ userId }) {
 }
 
 Hello.propTypes = {
-  userId: PropTypes.string,
+  name: PropTypes.string,
 };
 
 export default Hello;

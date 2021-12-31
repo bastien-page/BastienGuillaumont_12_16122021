@@ -1,7 +1,6 @@
 import React from "react";
 import { AreaChart, XAxis, YAxis, Tooltip, Area } from "recharts";
 import PropTypes from "prop-types";
-import { GetSessionData } from "../../services/getData";
 
 /**
  * Create AreaChart component
@@ -9,9 +8,7 @@ import { GetSessionData } from "../../services/getData";
  * @returns {React Component}
  */
 
-function Session({ userId }) {
-  const session = GetSessionData(userId);
-
+function Session({ session }) {
   /**
    * Customized Tooltip
    */
@@ -84,7 +81,7 @@ function Session({ userId }) {
 }
 
 Session.propTypes = {
-  userId: PropTypes.string,
+  session: PropTypes.array,
 };
 
 export default Session;

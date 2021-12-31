@@ -9,6 +9,15 @@ import Session from "./dashboard/Session";
 
 import { useParams } from "react-router-dom";
 
+import {
+  GetName,
+  GetActivityData,
+  GetScore,
+  GetKeyData,
+  GetSessionData,
+  GetPerformance,
+} from "../services/getData";
+
 /**
  * Create Dashboardcomponent
  * @returns {React Component}
@@ -18,19 +27,26 @@ function Dashboard() {
   const { id } = useParams();
   const userId = id;
 
+  const name = GetName(userId);
+  const activity = GetActivityData(userId);
+  const score = GetScore(userId);
+  const keyData = GetKeyData(userId);
+  const session = GetSessionData(userId);
+  const performance = GetPerformance(userId);
+
   return (
     <section className="dashboard">
-      <Hello userId={userId} />
+      <Hello name={name} />
       <section className="dashboard__charts">
         <div className="dashboard__charts-left">
-          <DailyActivity userId={userId} />
+          <DailyActivity activity={activity} />
           <div className="dashboard__charts-bottom">
-            <Session userId={userId} />
-            <RadarUser userId={userId} />
-            <Score userId={userId} />
+            <Session session={session} />
+            <RadarUser userId={userId} performance={performance} />
+            <Score score={score} />
           </div>
         </div>
-        <KeyData userId={userId} />
+        <KeyData keyData={keyData} />
       </section>
     </section>
   );

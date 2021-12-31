@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function Error() {
+  document.title = "SportSee : Page Introuvable";
   return (
     <div className="error">
       <p className="error__message">

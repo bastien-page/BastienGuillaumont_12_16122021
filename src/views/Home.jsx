@@ -2,6 +2,8 @@ import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 function Home() {
+  document.title = "SportSee : Accueil";
+
   return (
     <div className="home">
       <div className="home__group">

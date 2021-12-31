@@ -4,7 +4,6 @@ import proteines from "../../assets/iconProteins.png";
 import glucides from "../../assets/iconGlucides.png";
 import lipides from "../../assets/iconLipides.png";
 import PropTypes from "prop-types";
-import { GetKeyData } from "../../services/getData";
 
 /**
  * Create Key data component
@@ -12,9 +11,7 @@ import { GetKeyData } from "../../services/getData";
  * @returns {React Component}
  */
 
-function KeyData({ userId }) {
-  const data = GetKeyData(userId);
-
+function KeyData({ keyData }) {
   return (
     <div className="keydata">
       <div className="keydata__data">
@@ -22,7 +19,7 @@ function KeyData({ userId }) {
           <img src={calories} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{data.calorieCount}kCal</p>
+          <p className="keydata__data__unit">{keyData.calorieCount}kCal</p>
           <p className="keydata__data__title">Calories</p>
         </div>
       </div>
@@ -32,7 +29,7 @@ function KeyData({ userId }) {
           <img src={proteines} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{data.proteinCount}g</p>
+          <p className="keydata__data__unit">{keyData.proteinCount}g</p>
           <p className="keydata__data__title">Proteines</p>
         </div>
       </div>
@@ -42,7 +39,7 @@ function KeyData({ userId }) {
           <img src={glucides} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{data.carbohydrateCount}g</p>
+          <p className="keydata__data__unit">{keyData.carbohydrateCount}g</p>
           <p className="keydata__data__title">Glucides</p>
         </div>
       </div>
@@ -52,7 +49,7 @@ function KeyData({ userId }) {
           <img src={lipides} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{data.lipidCount}g</p>
+          <p className="keydata__data__unit">{keyData.lipidCount}g</p>
           <p className="keydata__data__title">Lipides</p>
         </div>
       </div>
@@ -61,7 +58,7 @@ function KeyData({ userId }) {
 }
 
 KeyData.propTypes = {
-  userId: PropTypes.string,
+  keyData: PropTypes.object,
 };
 
 export default KeyData;

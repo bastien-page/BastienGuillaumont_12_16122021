@@ -5,6 +5,8 @@ import Navbar from "../components/Navbar";
 import VerticalNavbar from "../components/VerticalNavbar";
 
 function Profile() {
+  document.title = "SportSee : Dashboard";
+
   return (
     <div className="profile">
       <Navbar />
