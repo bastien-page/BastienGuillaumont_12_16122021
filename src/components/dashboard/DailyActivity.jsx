@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
  * @returns {React Component }
  */
 function DailyActivity({ activity }) {
+  console.log(activity);
   /**
    * Customized Tooltip
    */

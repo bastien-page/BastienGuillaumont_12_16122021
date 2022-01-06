@@ -50,7 +50,7 @@ function RadarUser({ performance }) {
         tickLine={false}
         tickFormatter={customTick}
         style={{ fontSize: "12px" }}
-        dy={4}
+        cy={4}
       />
       <PolarRadiusAxis angle={"none"} dataKey="value" />
       <Radar
