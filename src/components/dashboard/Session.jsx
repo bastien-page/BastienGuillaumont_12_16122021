@@ -81,7 +81,7 @@ function Session({ session }) {
 }
 
 Session.propTypes = {
-  session: PropTypes.array,
+  session: PropTypes.array.isRequired,
 };
 
 export default Session;

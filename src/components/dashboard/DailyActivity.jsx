@@ -120,7 +120,7 @@ function DailyActivity({ activity }) {
  *
  */
 DailyActivity.propTypes = {
-  activity: PropTypes.array,
+  activity: PropTypes.array.isRequired,
 };
 
 export default DailyActivity;

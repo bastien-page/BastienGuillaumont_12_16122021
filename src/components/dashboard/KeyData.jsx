@@ -58,7 +58,7 @@ function KeyData({ keyData }) {
 }
 
 KeyData.propTypes = {
-  keyData: PropTypes.object,
+  keyData: PropTypes.object.isRequired,
 };
 
 export default KeyData;

@@ -46,6 +46,6 @@ function Score({ score }) {
   );
 }
 Score.propTypes = {
-  score: PropTypes.object,
+  score: PropTypes.object.isRequired,
 };
 export default Score;

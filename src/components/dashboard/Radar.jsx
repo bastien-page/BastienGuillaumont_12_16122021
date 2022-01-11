@@ -64,7 +64,7 @@ function RadarUser({ performance }) {
 }
 
 RadarUser.propTypes = {
-  performance: PropTypes.array,
+  performance: PropTypes.array.isRequired,
 };
 
 export default RadarUser;
