@@ -16,6 +16,7 @@ import PropTypes from "prop-types";
  * @returns {React Component }
  */
 function DailyActivity({ activity }) {
+  const userActivity = activity;
   /**
    * Customized Tooltip
    */
@@ -38,7 +39,7 @@ function DailyActivity({ activity }) {
       <BarChart
         width={800}
         height={300}
-        data={activity}
+        data={userActivity}
         margin={{
           top: 10,
           right: 10,
@@ -120,7 +121,7 @@ function DailyActivity({ activity }) {
  *
  */
 DailyActivity.propTypes = {
-  activity: PropTypes.array.isRequired,
+  userActivity: PropTypes.array.isRequired,
 };
 
 export default DailyActivity;

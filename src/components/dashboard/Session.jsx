@@ -9,6 +9,7 @@ import PropTypes from "prop-types";
  */
 
 function Session({ session }) {
+  const userSession = session;
   /**
    * Customized Tooltip
    */
@@ -43,7 +44,7 @@ function Session({ session }) {
       <AreaChart
         width={260}
         height={260}
-        data={session}
+        data={userSession}
         className="session__graph"
         style={{
           background: "#FF0000",
@@ -81,7 +82,7 @@ function Session({ session }) {
 }
 
 Session.propTypes = {
-  session: PropTypes.array.isRequired,
+  userSession: PropTypes.array.isRequired,
 };
 
 export default Session;

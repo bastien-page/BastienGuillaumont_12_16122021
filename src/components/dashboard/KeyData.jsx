@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
  */
 
 function KeyData({ keyData }) {
+  const userKeyData = keyData;
   return (
     <div className="keydata">
       <div className="keydata__data">
@@ -19,7 +20,7 @@ function KeyData({ keyData }) {
           <img src={calories} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{keyData.calorieCount}kCal</p>
+          <p className="keydata__data__unit">{userKeyData.calorieCount}kCal</p>
           <p className="keydata__data__title">Calories</p>
         </div>
       </div>
@@ -29,7 +30,7 @@ function KeyData({ keyData }) {
           <img src={proteines} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{keyData.proteinCount}g</p>
+          <p className="keydata__data__unit">{userKeyData.proteinCount}g</p>
           <p className="keydata__data__title">Proteines</p>
         </div>
       </div>
@@ -39,7 +40,9 @@ function KeyData({ keyData }) {
           <img src={glucides} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{keyData.carbohydrateCount}g</p>
+          <p className="keydata__data__unit">
+            {userKeyData.carbohydrateCount}g
+          </p>
           <p className="keydata__data__title">Glucides</p>
         </div>
       </div>
@@ -49,7 +52,7 @@ function KeyData({ keyData }) {
           <img src={lipides} alt="logo" />
         </div>
         <div>
-          <p className="keydata__data__unit">{keyData.lipidCount}g</p>
+          <p className="keydata__data__unit">{userKeyData.lipidCount}g</p>
           <p className="keydata__data__title">Lipides</p>
         </div>
       </div>
@@ -58,7 +61,7 @@ function KeyData({ keyData }) {
 }
 
 KeyData.propTypes = {
-  keyData: PropTypes.object.isRequired,
+  userKeyData: PropTypes.object.isRequired,
 };
 
 export default KeyData;
