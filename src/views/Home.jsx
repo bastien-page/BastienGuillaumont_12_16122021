@@ -11,10 +11,10 @@ function Home() {
         <h1 className="home__title">Bienvenue</h1>
         <div className="home__users">
           <Link to="/12" className="home__user">
-            Utilisateur 1
+            Karl
           </Link>
           <Link to="/18" className="home__user">
-            Utilisateur 2
+            Cecilia
           </Link>
         </div>
       </div>

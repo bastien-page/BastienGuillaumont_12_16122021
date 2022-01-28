@@ -42,7 +42,7 @@ function Dashboard() {
           <DailyActivity activity={activity} />
           <div className="dashboard__charts-bottom">
             <Session session={session} />
-            <RadarUser userId={userId} performance={performance} />
+            <RadarUser performance={performance} />
             <Score score={score} />
           </div>
         </div>

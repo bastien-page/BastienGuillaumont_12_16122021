@@ -3,9 +3,9 @@ import { AreaChart, XAxis, YAxis, Tooltip, Area } from "recharts";
 import PropTypes from "prop-types";
 
 /**
- * Create AreaChart component
- * @param {string} User Id
- * @returns {React Component}
+ * @description Component Session
+ * @param {array} session session of user
+ * @returns ReactComponent
  */
 
 function Session({ session }) {
@@ -82,7 +82,7 @@ function Session({ session }) {
 }
 
 Session.propTypes = {
-  userSession: PropTypes.array.isRequired,
+  userSession: PropTypes.array,
 };
 
 export default Session;

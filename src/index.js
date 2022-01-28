@@ -14,7 +14,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/:id" element={<Profile />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

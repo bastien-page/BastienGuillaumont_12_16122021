@@ -1,17 +1,11 @@
 import React from "react";
-import {
-  RadarChart,
-  PolarGrid,
-  PolarAngleAxis,
-  PolarRadiusAxis,
-  Radar,
-} from "recharts";
+import { RadarChart, PolarGrid, PolarAngleAxis, Radar } from "recharts";
 import PropTypes from "prop-types";
 
 /**
- * Create Radar component
- * @param {string} User Id
- * @returns {React Component}
+ * @description Component Radar
+ * @param {array} performance performance of user
+ * @returns ReactComponent
  */
 
 function RadarUser({ performance }) {
@@ -70,7 +64,7 @@ function RadarUser({ performance }) {
 }
 
 RadarUser.propTypes = {
-  userPerformance: PropTypes.array.isRequired,
+  userPerformance: PropTypes.array,
 };
 
 export default RadarUser;

@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
- * Create Hello component
- * @param {string} User Id
- * @returns {React Component}
+ * @description Component Hello
+ * @param {string} name name of user
+ * @returns ReactComponent
  */
 
 function Hello({ name }) {
@@ -21,7 +21,7 @@ function Hello({ name }) {
 }
 
 Hello.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
 };
 
 export default Hello;

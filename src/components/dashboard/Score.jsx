@@ -3,6 +3,12 @@ import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
 
 import PropTypes from "prop-types";
 
+/**
+ * @description Component Score
+ * @param {object} score socre of user
+ * @returns ReactComponent
+ */
+
 function Score({ score }) {
   const userScore = score.score ? score.score * 100 : score.todayScore * 100;
 
@@ -46,6 +52,6 @@ function Score({ score }) {
   );
 }
 Score.propTypes = {
-  userScore: PropTypes.object.isRequired,
+  userScore: PropTypes.object,
 };
 export default Score;

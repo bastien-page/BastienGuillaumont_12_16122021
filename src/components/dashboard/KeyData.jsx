@@ -6,9 +6,9 @@ import lipides from "../../assets/iconLipides.png";
 import PropTypes from "prop-types";
 
 /**
- * Create Key data component
- * @param {string} User Id
- * @returns {React Component}
+ * @description Component KeyData
+ * @param {object} keyData keydata of user
+ * @returns ReactComponent
  */
 
 function KeyData({ keyData }) {
@@ -61,7 +61,7 @@ function KeyData({ keyData }) {
 }
 
 KeyData.propTypes = {
-  userKeyData: PropTypes.object.isRequired,
+  userKeyData: PropTypes.object,
 };
 
 export default KeyData;

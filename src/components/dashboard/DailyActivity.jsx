@@ -11,12 +11,14 @@ import {
 import PropTypes from "prop-types";
 
 /**
- * Create BarChart component
- * @param {string} User Id
- * @returns {React Component }
+ * @description Component daily activity
+ * @param {object} activity activity datas of user
+ * @returns ReactComponent
  */
+
 function DailyActivity({ activity }) {
   const userActivity = activity;
+
   /**
    * Customized Tooltip
    */
@@ -121,7 +123,7 @@ function DailyActivity({ activity }) {
  *
  */
 DailyActivity.propTypes = {
-  userActivity: PropTypes.array.isRequired,
+  userActivity: PropTypes.array,
 };
 
 export default DailyActivity;
